@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { add, divide, multiply, subtract } from './calculator';
 
 function App() {
@@ -9,6 +9,10 @@ function App() {
   const [result, setResult] = useState<number>();
 
   const disabled = useMemo(() => x == null || y == null, [x, y]);
+
+  if (true) {
+    useEffect(() => console.log("hi"), [])
+  }
 
   const operate = useCallback(
     (operation: (a: number, b: number) => number) => () => {
